@@ -14,7 +14,7 @@ ARG DB_USER
 ARG DB_PASSWORD
 
 RUN /etc/init.d/mysql start && \
-    mysql -u root -e "CREATE DATABASE $DB; CREATE USER '$DB_USER' IDENTIFIED BY '$DB_PASSWORD'; GRANT ALL PRIVILEGES ON *.* TO '$DB_USER';" && \
+    mysql -u root -e "CREATE DATABASE $DB; CREATE USER '$DB_USER' IDENTIFIED BY '$DB_PASSWORD'; GRANT ALL PRIVILEGES ON *.* TO '$DB_USER'@'%';" && \
     /etc/init.d/mysql stop
 
 EXPOSE 3306
