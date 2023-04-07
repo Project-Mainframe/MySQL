@@ -8,9 +8,9 @@ env:
   DB: ${{ secrets.DB }}
   DB_USER: ${{ secrets.DB_USER }}
   DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
-  IMAGE_NAME: my-image-name
-  SSH_HOST: example.com
-  SSH_USER: root
+  IMAGE_NAME: ${{ secrets.IMAGE_NAME }}
+  SSH_HOST: ${{ secrets.SSH_HOST }}
+  SSH_USER: ${{ secrets.SSH_USER }}
   SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
 
 jobs:
