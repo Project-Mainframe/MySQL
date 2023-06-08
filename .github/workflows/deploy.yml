@@ -52,3 +52,6 @@ jobs:
             docker load < "/root/containers/${{ secrets.IMAGE_NAME }}.tar"
             docker run -d --name ${{ secrets.IMAGE_NAME }} -p 3306:3306 -v mysql:/var/lib/mysql ${{ secrets.IMAGE_NAME }}
             exit
+       - name: Delete Docker image file
+         run: |
+           rm "${{ secrets.IMAGE_NAME }}.tar"
